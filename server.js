@@ -14,8 +14,15 @@ dotenv.config();
 const app = express();
 connectDB();
 
-// Middleware
-app.use(cors());
+// CORS configuration to allow requests from specific frontend (Netlify)
+app.use(cors({
+    origin: 'https://employee-managment-system-mern.netlify.app', // Replace with your Netlify domain
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true, // Allow credentials like cookies, HTTP auth if needed
+  }));
+  
+  // Handle preflight requests (OPTIONS) for all routes
+  app.options('*', cors());
 app.use(express.json({ extended: false }));
 app.use('/uploads', express.static('uploads')); // Serve uploaded images
 app.use('/api', employeeRoutes); // Employee routes
