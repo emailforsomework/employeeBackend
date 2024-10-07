@@ -35,7 +35,7 @@ app.use('/api', userRoutes);
 app.use(errorHandler);
 
 // Reloader Code
-const url = `https://employeebackend-8n8m.onrender.com/`; // Replace with your Render URL
+const url = `https://employeebackend-8n8m.onrender.com`; // Replace with your Render URL
 const interval = 3000; // Interval in milliseconds (30 seconds)
 
 function reloadWebsite() {
