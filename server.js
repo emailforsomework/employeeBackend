@@ -38,7 +38,7 @@ app.get('/test', (req, res) => {
 });
 // Reloader Code
 const url = `https://employeebackend-8n8m.onrender.com/test`; // Replace with your Render URL
-const interval = 3000; // Interval in milliseconds (30 seconds)
+const interval = 300000; // Interval in milliseconds (5 min)
 
 function reloadWebsite() {
     axios.get(url)
