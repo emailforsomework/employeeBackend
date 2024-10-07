@@ -33,9 +33,11 @@ app.use('/api', userRoutes);
 
 // Use error handler
 app.use(errorHandler);
-
+app.get('/test', (req, res) => {
+  res.send('Test route working!');
+});
 // Reloader Code
-const url = `https://employeebackend-8n8m.onrender.com/api/register`; // Replace with your Render URL
+const url = `https://employeebackend-8n8m.onrender.com/test`; // Replace with your Render URL
 const interval = 3000; // Interval in milliseconds (30 seconds)
 
 function reloadWebsite() {
